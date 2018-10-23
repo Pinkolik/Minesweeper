@@ -53,6 +53,9 @@
     </Compile>
     <Compile Include="Game Engine\FieldSettings.cs" />
     <Compile Include="Game Engine\SettingsLoader.cs" />
+    <Compile Include="Game Skins\BitmapExtension.cs" />
+    <Compile Include="Game Skins\DefaultSkin.cs" />
+    <Compile Include="Game Skins\ISkin.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,7 +100,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Settings.txt" />
+    <EmbeddedResource Include="Resources\Skins\Default Skin\DefaultField.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Skins\Default Skin\DefaultFlag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Skins\Default Skin\DefaultMine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Skins\Default Skin\DefaultTile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

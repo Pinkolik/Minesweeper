@@ -14,12 +14,14 @@ namespace Minesweeper
     {
         private MineField _mineField;
         private FieldSettings _settings;
+        private ISkin _skin;
 
         public MainForm()
         {
             InitializeComponent();
             MaximizeBox = false;
             _settings = SettingsLoader.TryLoadSettings();
+            _skin = new DefaultSkin();
             StartNewGame();
         }
 
@@ -53,7 +55,7 @@ namespace Minesweeper
             _mineField.OnGameOver += OnGameOver;
             _mineField.OnGameWon += OnGameWon;
             ResizeForm();
-            pictureBox1.DrawField(_mineField);
+            pictureBox1.DrawField(_mineField, _skin);
         }
 
         private void OnGameOver(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace Minesweeper
         {
             if (_mineField == null) return;
             pictureBox1.HandleFieldClick(e, _mineField);
-            pictureBox1.DrawField(_mineField);
+            pictureBox1.DrawField(_mineField, _skin);
             _mineField.CheckGameState();
         }
 
