@@ -1,6 +1,6 @@
 ﻿namespace Minesweeper
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.begginerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.beginnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.intermediateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bestTimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.beginnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bestTimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +64,10 @@
             this.intermediateToolStripMenuItem,
             this.expertToolStripMenuItem,
             this.customToolStripMenuItem,
-            this.exitToolStripMenuItem,
             this.toolStripMenuItem2,
             this.bestTimesToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.begginerToolStripMenuItem});
+            this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
@@ -81,12 +79,61 @@
             this.newToolStripMenuItem.Text = "New Game";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // beginnerToolStripMenuItem
+            // 
+            this.beginnerToolStripMenuItem.Name = "beginnerToolStripMenuItem";
+            this.beginnerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beginnerToolStripMenuItem.Text = "Beginner";
+            this.beginnerToolStripMenuItem.Click += new System.EventHandler(this.beginnerToolStripMenuItem_Click);
+            // 
+            // intermediateToolStripMenuItem
+            // 
+            this.intermediateToolStripMenuItem.Name = "intermediateToolStripMenuItem";
+            this.intermediateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.intermediateToolStripMenuItem.Text = "Intermediate";
+            this.intermediateToolStripMenuItem.Click += new System.EventHandler(this.intermediateToolStripMenuItem_Click);
+            // 
+            // expertToolStripMenuItem
+            // 
+            this.expertToolStripMenuItem.Name = "expertToolStripMenuItem";
+            this.expertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.expertToolStripMenuItem.Text = "Expert";
+            this.expertToolStripMenuItem.Click += new System.EventHandler(this.expertToolStripMenuItem_Click);
+            // 
+            // customToolStripMenuItem
+            // 
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // bestTimesToolStripMenuItem
+            // 
+            this.bestTimesToolStripMenuItem.Name = "bestTimesToolStripMenuItem";
+            this.bestTimesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bestTimesToolStripMenuItem.Text = "Best Times...";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // pictureBox1
             // 
@@ -97,58 +144,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // begginerToolStripMenuItem
-            // 
-            this.begginerToolStripMenuItem.Name = "begginerToolStripMenuItem";
-            this.begginerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.begginerToolStripMenuItem.Text = "Exit";
-            // 
-            // intermediateToolStripMenuItem
-            // 
-            this.intermediateToolStripMenuItem.Name = "intermediateToolStripMenuItem";
-            this.intermediateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.intermediateToolStripMenuItem.Text = "Intermediate";
-            // 
-            // expertToolStripMenuItem
-            // 
-            this.expertToolStripMenuItem.Name = "expertToolStripMenuItem";
-            this.expertToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.expertToolStripMenuItem.Text = "Expert";
-            // 
-            // customToolStripMenuItem
-            // 
-            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.customToolStripMenuItem.Text = "Custom";
-            // 
-            // bestTimesToolStripMenuItem
-            // 
-            this.bestTimesToolStripMenuItem.Name = "bestTimesToolStripMenuItem";
-            this.bestTimesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bestTimesToolStripMenuItem.Text = "Best Times...";
-            // 
-            // beginnerToolStripMenuItem
-            // 
-            this.beginnerToolStripMenuItem.Name = "beginnerToolStripMenuItem";
-            this.beginnerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.beginnerToolStripMenuItem.Text = "Beginner";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +153,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Minesweeper#";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -182,7 +178,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem bestTimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem begginerToolStripMenuItem;
     }
 }
 

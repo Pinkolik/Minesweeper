@@ -1,5 +1,8 @@
-﻿namespace Minesweeper
+﻿using System;
+
+namespace Minesweeper
 {
+    [Serializable]
     public class FieldSettings
     {
         public FieldSettings(int columns, int rows, int numberOfMines)

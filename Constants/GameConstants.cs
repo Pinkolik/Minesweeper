@@ -8,6 +8,7 @@ namespace Minesweeper
 {
     public static class GameConstants
     {
+        public static string SettingsFileName { get; } = "settings.bin";
         public static int CellWidth { get; } = 30;
         public static int CellHeight { get; } = 30;
         public static FieldSettings BeginnerSettings { get; } = new FieldSettings(10, 10, 10);

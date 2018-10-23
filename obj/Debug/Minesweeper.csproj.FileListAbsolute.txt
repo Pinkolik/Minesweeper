@@ -2,9 +2,11 @@ C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin\Debug\Minesweeper.exe
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin\Debug\Minesweeper.pdb
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csprojAssemblyReference.cache
-C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Form1.resources
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Properties.Resources.resources
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.GenerateResource.cache
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.CustomSettingsForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.MainForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.g.resources
