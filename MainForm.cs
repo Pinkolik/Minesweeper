@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace Minesweeper
         private MineField _mineField;
         private FieldSettings _settings;
         private ISkin _skin;
+        private FrameDimension _dimension;
+        private int _frameIndex;
 
         public MainForm()
         {
@@ -60,12 +63,14 @@ namespace Minesweeper
 
         private void OnGameOver(object sender, EventArgs e)
         {
-            MessageBox.Show($"Ты, бля, педик, проиграл, иди в жопу и анал {_mineField.TimeElapsed}");
+            pictureBox1.DrawField(_mineField, _skin);
+            MessageBox.Show($"You've lost :( Time: {Math.Floor(_mineField.TimeElapsed)}");
         }
 
         private void OnGameWon(object sender, EventArgs e)
         {
-            MessageBox.Show($"Ты, красавчик, заебись, разъебал всё поле {_mineField.TimeElapsed}");
+            pictureBox1.DrawField(_mineField, _skin);
+            MessageBox.Show($"You've won! Time: {Math.Floor(_mineField.TimeElapsed)}");
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -99,6 +104,60 @@ namespace Minesweeper
             var settingsForm = new CustomSettingsForm();
             settingsForm.FormClosed += OnCustomSettingsClosed;
             settingsForm.Show();
+        }
+
+        private void defaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopAnimating();
+            _skin = new DefaultSkin();
+            pictureBox1.DrawField(_mineField, _skin);
+        }
+
+        private void shrekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopAnimating();
+            _skin = new ShrekSkin();
+            pictureBox1.DrawField(_mineField, _skin);
+        }
+
+        private void mLGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopAnimating();
+            _skin = new MLGSkin();
+            StartAnimating(Properties.Resources.MLGField);
+            pictureBox1.DrawField(_mineField, _skin);
+        }
+
+        private void minecraftToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopAnimating();
+            _skin = new MinecraftSkin();
+            pictureBox1.DrawField(_mineField, _skin);
+        }
+
+        private void falloutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _skin = new FalloutSkin();
+            pictureBox1.DrawField(_mineField, _skin);
+        }
+
+        private void StartAnimating(Bitmap bitmap)
+        {
+            _dimension = new FrameDimension(bitmap.FrameDimensionsList[0]);
+            _frameIndex = 0;
+            gifTimer.Enabled = true;
+        }
+
+        private void StopAnimating()
+        {
+            gifTimer.Enabled = false;
+        }
+
+        private void gifTimer_Tick(object sender, EventArgs e)
+        {
+            _frameIndex = (_frameIndex + 1) % _skin.Field.GetFrameCount(_dimension);
+            _skin.Field.SelectActiveFrame(_dimension, _frameIndex);
+            pictureBox1.DrawField(_mineField, _skin);
         }
     }
 }

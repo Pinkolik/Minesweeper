@@ -10,7 +10,7 @@ namespace Minesweeper
         {
             var bitmap = skin.Field.ResizeBitmap(pictureBox.Width, pictureBox.Height);
             var tempGraphics = Graphics.FromImage(bitmap);
-            var myFont = new Font(FontFamily.GenericSerif, 15);
+            var myFont = new Font(FontFamily.GenericSerif, GameConstants.FontSize);
             for (var i = 0; i < mineField.Rows; i++)
             for (var j = 0; j < mineField.Columns; j++)
                 DrawMineCell(i, j, tempGraphics, myFont, skin, mineField);
@@ -42,7 +42,7 @@ namespace Minesweeper
                 && !mineField.HasMine(column, row))
                 graphics.DrawString(mineField.NeighborMinesCount(column, row).ToString(),
                     font,
-                    Brushes.White,
+                    skin.TextBrush,
                     column * GameConstants.CellWidth + GameConstants.CellWidth / 4,
                     row * GameConstants.CellHeight + GameConstants.CellHeight / 8);
         }

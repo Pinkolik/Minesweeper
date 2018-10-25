@@ -130,4 +130,52 @@
   <data name="DefaultTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skins\Default Skin\DefaultTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FalloutField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutField.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutFlag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutFlag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutMine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutMine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftField.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftFlag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftFlag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftMine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftMine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGField.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGFlag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGFlag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGMine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGMine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekField" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekField.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekFlag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekFlag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekMine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekMine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

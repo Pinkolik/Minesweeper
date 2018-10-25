@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.Windows.Forms;
-using Minesweeper.Properties;
 
 namespace Minesweeper
 {
     public partial class CustomSettingsForm : Form
     {
-
         public CustomSettingsForm()
         {
             InitializeComponent();
@@ -33,7 +23,7 @@ namespace Minesweeper
                 var columns = int.Parse(widthTextBox.Text);
                 var rows = int.Parse(heightTextBox.Text);
                 var mines = int.Parse(minesTextBox.Text);
-                settings = mines > columns * rows
+                settings = mines >= columns * rows || columns <= 0 || rows <= 0 || mines <= 0
                     ? GameConstants.BeginnerSettings
                     : new FieldSettings(columns, rows, mines);
             }

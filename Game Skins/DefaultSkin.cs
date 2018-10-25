@@ -9,5 +9,6 @@ namespace Minesweeper
         public Bitmap Mine { get; } = Resources.DefaultMine;
         public Bitmap Tile { get; } = Resources.DefaultTile;
         public Bitmap Flag { get; } = Resources.DefaultTile.OverlayBitmaps(Resources.DefaultFlag);
+        public Brush TextBrush { get; } = Brushes.Black;
     }
 }

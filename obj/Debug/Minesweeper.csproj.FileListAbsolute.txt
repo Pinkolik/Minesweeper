@@ -9,3 +9,4 @@ C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.CustomSettingsForm.resources
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.MainForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.g.resources

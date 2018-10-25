@@ -115,8 +115,9 @@ namespace Minesweeper
 
         public void CheckGameState()
         {
-            if (!_gameFinished && CheckGameWon())
-                OnGameWon.Invoke(this, EventArgs.Empty);
+            if (_gameFinished || !CheckGameWon()) return;
+            ShowMines();
+            OnGameWon.Invoke(this, EventArgs.Empty);
         }
 
         private bool CheckGameWon()
@@ -133,6 +134,7 @@ namespace Minesweeper
         {
             _gameWatch.Stop();
             _gameFinished = true;
+            ShowMines();
             OnGameOver.Invoke(this, EventArgs.Empty);
         }
 
@@ -162,6 +164,14 @@ namespace Minesweeper
                 neighborCells = new List<MineCell>();
                 MakeActionWithNeighbors(column, row, (x, y) => neighborCells.Add(_mineCells[x, y]));
                 _mineCells[column, row].CountNeighborMines(neighborCells);
+            });
+        }
+
+        private void ShowMines()
+        {
+            MakeActionWithField((x, y) =>
+            {
+                if (_mineCells[x, y].HasMine) _mineCells[x, y].Open();
             });
         }
 

@@ -8,5 +8,6 @@ namespace Minesweeper
         Bitmap Mine { get; }
         Bitmap Tile { get; }
         Bitmap Flag { get; }
+        Brush TextBrush { get; }
     }
 }
