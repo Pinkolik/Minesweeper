@@ -52,6 +52,9 @@
       <DependentUpon>CustomSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Game Engine\FieldSettings.cs" />
+    <Compile Include="Game Engine\GameState.cs" />
+    <Compile Include="Game Engine\Player.cs" />
+    <Compile Include="Game Engine\PlayerLoader.cs" />
     <Compile Include="Game Skins\FalloutSkin.cs" />
     <Compile Include="Game Skins\MinecraftSkin.cs" />
     <Compile Include="Game Skins\MLGSkin.cs" />
@@ -59,7 +62,7 @@
     <Compile Include="Game Skins\BitmapExtension.cs" />
     <Compile Include="Game Skins\ShrekSkin.cs" />
     <Compile Include="Game Skins\DefaultSkin.cs" />
-    <Compile Include="Game Skins\ISkin.cs" />
+    <Compile Include="Game Skins\Skin.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,14 +74,29 @@
     <Compile Include="Game Engine\MineField.cs" />
     <Compile Include="MineFieldClickHandler.cs" />
     <Compile Include="MineFieldDrawer.cs" />
+    <Compile Include="NewPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPlayerForm.Designer.cs">
+      <DependentUpon>NewPlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPlayerForm.Designer.cs">
+      <DependentUpon>SelectPlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Serializer\Serializer.cs" />
     <EmbeddedResource Include="CustomSettingsForm.resx">
       <DependentUpon>CustomSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPlayerForm.resx">
+      <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SelectPlayerForm.resx">
+      <DependentUpon>SelectPlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,64 +125,80 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Default Skin\DefaultField.jpg" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutDefaultFace.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekWonFace.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultDefaultFace.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultField.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Default Skin\DefaultFlag.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultFlag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Default Skin\DefaultMine.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultLostFace.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultMine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Default Skin\DefaultTile.png" />
+    <Content Include="Resources\Skins\Default Skin\DefaultTile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Shrek Skin\ShrekField.jpg" />
+    <Content Include="Resources\Skins\Default Skin\DefaultWonFace.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FallotDefaultFace.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutLostFace.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutWonFace.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftDefaultFace.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftLostFace.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftWonFace.png" />
+    <Content Include="Resources\Skins\MLG Skin\MLGDefaultFace.png" />
+    <Content Include="Resources\Skins\MLG Skin\MLGLostFace.gif" />
+    <Content Include="Resources\Skins\MLG Skin\MLGWonFace.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekDefaultFace.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekField.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Shrek Skin\ShrekFlag.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekFlag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Shrek Skin\ShrekTile.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekLostFace.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekTile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Shrek Skin\ShrekMine.png" />
+    <Content Include="Resources\Skins\Shrek Skin\ShrekMine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\MLG Skin\MLGField.gif" />
+    <Content Include="Resources\Skins\MLG Skin\MLGField.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\MLG Skin\MLGFlag.png" />
+    <Content Include="Resources\Skins\MLG Skin\MLGFlag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\MLG Skin\MLGMine.png" />
+    <Content Include="Resources\Skins\MLG Skin\MLGMine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\MLG Skin\MLGTile.png" />
+    <Content Include="Resources\Skins\MLG Skin\MLGTile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Minecraft Skin\MinecraftField.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftField.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Minecraft Skin\MinecraftFlag.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftFlag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Minecraft Skin\MinecraftMine.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftMine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Minecraft Skin\MinecraftTile.png" />
+    <Content Include="Resources\Skins\Minecraft Skin\MinecraftTile.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Fallout Skin\FalloutField.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutField.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Fallout Skin\FalloutFlag.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutFlag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Fallout Skin\FalloutMine.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutMine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Skins\Fallout Skin\FalloutTile.png" />
+    <Content Include="Resources\Skins\Fallout Skin\FalloutTile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,14 +1,22 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using Minesweeper.Properties;
 
 namespace Minesweeper
 {
-    public class ShrekSkin : ISkin
+    [Serializable]
+    public class ShrekSkin : Skin
     {
-        public Bitmap Field { get; } = Resources.ShrekField;
-        public Bitmap Mine { get; } = Resources.ShrekMine;
-        public Bitmap Tile { get; } = Resources.ShrekTile;
-        public Bitmap Flag { get; } = Resources.ShrekTile.OverlayBitmaps(Resources.ShrekFlag);
-        public Brush TextBrush { get; } = Brushes.Red;
+        public override string SkinName { get; } = "Shrek";
+        public override Bitmap Field { get; } = Resources.ShrekField;
+        public override Bitmap Mine { get; } = Resources.ShrekMine;
+        public override Bitmap Tile { get; } = Resources.ShrekTile;
+        public override Bitmap Flag { get; } = Resources.ShrekTile.OverlayBitmaps(Resources.ShrekFlag);
+        public override Bitmap DefaultFace { get; } = Resources.ShrekDefaultFace;
+        public override Bitmap LostFace { get; } = Resources.ShrekLostFace;
+        public override Bitmap WonFace { get; } = Resources.ShrekWonFace;
+        public override string WinMessage { get; } = "You saved Fiona";
+        public override string LostMessage { get; } = "Lord Farquaad killed Fiona";
+        public override Color TextBrushColor { get; } = Color.Red;
     }
 }

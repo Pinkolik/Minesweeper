@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Minesweeper.Properties;
 
 namespace Minesweeper
 {
-    public class FalloutSkin : ISkin
+    [Serializable]
+    public class FalloutSkin : Skin
     {
-        public Bitmap Field { get; } = Properties.Resources.FalloutField;
-        public Bitmap Mine { get; } = Properties.Resources.FalloutMine;
-        public Bitmap Tile { get; } = Properties.Resources.FalloutTile;
-        public Bitmap Flag { get; } = Properties.Resources.FalloutTile.OverlayBitmaps(Properties.Resources.FalloutFlag);
-        public Brush TextBrush { get; } = Brushes.DarkBlue;
+        public override string SkinName { get; } = "Fallout";
+        public override Bitmap Field { get; } = Resources.FalloutField;
+        public override Bitmap Mine { get; } = Resources.FalloutMine;
+        public override Bitmap Tile { get; } = Resources.FalloutTile;
+        public override Bitmap Flag { get; } = Resources.FalloutTile.OverlayBitmaps(Resources.FalloutFlag);
+        public override Bitmap DefaultFace { get; } = Resources.FalloutDefaultFace;
+        public override Bitmap LostFace { get; } = Resources.FalloutLostFace;
+        public override Bitmap WonFace { get; } = Resources.FalloutWonFace;
+        public override string WinMessage { get; } = "Explosives +10";
+        public override string LostMessage { get; } = "Your life has ended in The Wasteland";
+        public override Color TextBrushColor { get; } = Color.DarkBlue;
     }
 }

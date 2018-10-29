@@ -5,11 +5,10 @@ namespace Minesweeper
 {
     public partial class CustomSettingsForm : Form
     {
-        public CustomSettingsForm()
+        public CustomSettingsForm(FieldSettings settings)
         {
             InitializeComponent();
             MaximizeBox = false;
-            var settings = SettingsLoader.TryLoadSettings();
             widthTextBox.Text = settings.Columns.ToString();
             heightTextBox.Text = settings.Rows.ToString();
             minesTextBox.Text = settings.NumberOfMines.ToString();

@@ -11,11 +11,11 @@ namespace Minesweeper
 
         private void CheckForFirstClick(int column, int row)
         {
-            if (_firstClickHappened) return;
+            if (GameState != GameState.NotStarted) return;
             FillField(column, row);
             CountNeighbors();
             _gameWatch.Start();
-            _firstClickHappened = true;
+            GameState = GameState.InProgress;
         }
 
         #endregion
@@ -38,11 +38,13 @@ namespace Minesweeper
         {
             Columns = columns;
             Rows = rows;
+            GameState = GameState.NotStarted;
             _mineCells = new MineCell[columns, rows];
             MakeActionWithField((x, y) => _mineCells[x, y] = new MineCell());
             _numberOfMines = numberOfMines;
             _gameWatch = new Stopwatch();
             _cellsToOpen = Columns * Rows - _numberOfMines;
+            _fieldSettings = new FieldSettings(columns, rows, numberOfMines);
         }
 
         public MineField(FieldSettings settings) :
@@ -58,9 +60,8 @@ namespace Minesweeper
         private readonly Stopwatch _gameWatch;
         private readonly MineCell[,] _mineCells;
         private readonly int _numberOfMines;
-        private bool _firstClickHappened;
+        private readonly FieldSettings _fieldSettings;
         private int _flagsOnField;
-        private bool _gameFinished;
 
         #endregion
 
@@ -69,6 +70,8 @@ namespace Minesweeper
         public int Columns { get; }
         public int Rows { get; }
         public double TimeElapsed => _gameWatch.ElapsedMilliseconds / 1000.0;
+        public int MoneyWon { get; private set; }
+        public GameState GameState { get; private set; }
         public event EventHandler OnGameOver;
         public event EventHandler OnGameWon;
 
@@ -85,7 +88,7 @@ namespace Minesweeper
 
         public void PutFlag(int column, int row)
         {
-            if (_gameFinished) return;
+            if (GameState != GameState.InProgress) return;
             if (_mineCells[column, row].WasOpened) return;
             _mineCells[column, row].HasFlag = !_mineCells[column, row].HasFlag;
             MakeActionWithNeighbors(column, row,
@@ -96,7 +99,7 @@ namespace Minesweeper
 
         public void OpenCell(int column, int row)
         {
-            if (_gameFinished) return;
+            if (GameState == GameState.Won || GameState == GameState.Lost) return;
 
             CheckForFirstClick(column, row);
 
@@ -115,8 +118,14 @@ namespace Minesweeper
 
         public void CheckGameState()
         {
-            if (_gameFinished || !CheckGameWon()) return;
+            if (GameState != GameState.InProgress || !CheckGameWon()) return;
             ShowMines();
+            if (_fieldSettings.Equals(GameConstants.BeginnerSettings) ||
+                _fieldSettings.Equals(GameConstants.IntermediateSettings) ||
+                _fieldSettings.Equals(GameConstants.ExpertSettings))
+                MoneyWon = (int) Math.Round(Rows * Columns +
+                                            (double) _numberOfMines / (Rows * Columns) * 10000 / TimeElapsed) *
+                           (_numberOfMines / 10);
             OnGameWon.Invoke(this, EventArgs.Empty);
         }
 
@@ -126,14 +135,14 @@ namespace Minesweeper
             var openCount = _mineCells.Cast<MineCell>().Count(cell => cell.WasOpened);
             if (openCount != _cellsToOpen) return false;
             _gameWatch.Stop();
-            _gameFinished = true;
+            GameState = GameState.Won;
             return true;
         }
 
         private void GameOver()
         {
             _gameWatch.Stop();
-            _gameFinished = true;
+            GameState = GameState.Won;
             ShowMines();
             OnGameOver.Invoke(this, EventArgs.Empty);
         }
@@ -226,6 +235,11 @@ namespace Minesweeper
         public int NeighborMinesCount(int column, int row)
         {
             return _mineCells[column, row].NeighborMines;
+        }
+
+        public int FlagsLeft()
+        {
+            return _numberOfMines - _flagsOnField;
         }
 
         #endregion

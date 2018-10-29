@@ -1,28 +1,30 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Minesweeper
 {
     public static class MineFieldDrawer
     {
-        public static void DrawField(this PictureBox pictureBox, MineField mineField, ISkin skin)
+        public static void DrawField(this PictureBox pictureBox, MineField mineField, Skin skin)
         {
             var bitmap = skin.Field.ResizeBitmap(pictureBox.Width, pictureBox.Height);
             var tempGraphics = Graphics.FromImage(bitmap);
             var myFont = new Font(FontFamily.GenericSerif, GameConstants.FontSize);
+            var fontBrush = new SolidBrush(skin.TextBrushColor);
             for (var i = 0; i < mineField.Rows; i++)
             for (var j = 0; j < mineField.Columns; j++)
-                DrawMineCell(i, j, tempGraphics, myFont, skin, mineField);
+                DrawMineCell(i, j, tempGraphics, myFont, fontBrush, skin, mineField);
 
             pictureBox.Image = bitmap;
             myFont.Dispose();
+            fontBrush.Dispose();
             tempGraphics.Dispose();
         }
 
         private static void DrawMineCell(int row, int column, Graphics graphics,
             Font font,
-            ISkin skin,
+            Brush fontBrush,
+            Skin skin,
             MineField mineField)
         {
             Bitmap myImage;
@@ -42,7 +44,7 @@ namespace Minesweeper
                 && !mineField.HasMine(column, row))
                 graphics.DrawString(mineField.NeighborMinesCount(column, row).ToString(),
                     font,
-                    skin.TextBrush,
+                    fontBrush,
                     column * GameConstants.CellWidth + GameConstants.CellWidth / 4,
                     row * GameConstants.CellHeight + GameConstants.CellHeight / 8);
         }

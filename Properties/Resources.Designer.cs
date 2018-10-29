@@ -63,6 +63,16 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DefaultDefaultFace {
+            get {
+                object obj = ResourceManager.GetObject("DefaultDefaultFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DefaultField {
             get {
                 object obj = ResourceManager.GetObject("DefaultField", resourceCulture);
@@ -76,6 +86,16 @@ namespace Minesweeper.Properties {
         internal static System.Drawing.Bitmap DefaultFlag {
             get {
                 object obj = ResourceManager.GetObject("DefaultFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DefaultLostFace {
+            get {
+                object obj = ResourceManager.GetObject("DefaultLostFace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +123,26 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DefaultWonFace {
+            get {
+                object obj = ResourceManager.GetObject("DefaultWonFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FalloutDefaultFace {
+            get {
+                object obj = ResourceManager.GetObject("FalloutDefaultFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FalloutField {
             get {
                 object obj = ResourceManager.GetObject("FalloutField", resourceCulture);
@@ -116,6 +156,16 @@ namespace Minesweeper.Properties {
         internal static System.Drawing.Bitmap FalloutFlag {
             get {
                 object obj = ResourceManager.GetObject("FalloutFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FalloutLostFace {
+            get {
+                object obj = ResourceManager.GetObject("FalloutLostFace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +193,26 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FalloutWonFace {
+            get {
+                object obj = ResourceManager.GetObject("FalloutWonFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MinecraftDefaultFace {
+            get {
+                object obj = ResourceManager.GetObject("MinecraftDefaultFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MinecraftField {
             get {
                 object obj = ResourceManager.GetObject("MinecraftField", resourceCulture);
@@ -156,6 +226,16 @@ namespace Minesweeper.Properties {
         internal static System.Drawing.Bitmap MinecraftFlag {
             get {
                 object obj = ResourceManager.GetObject("MinecraftFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MinecraftLostFace {
+            get {
+                object obj = ResourceManager.GetObject("MinecraftLostFace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +263,26 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MinecraftWonFace {
+            get {
+                object obj = ResourceManager.GetObject("MinecraftWonFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MLGDefaultFace {
+            get {
+                object obj = ResourceManager.GetObject("MLGDefaultFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MLGField {
             get {
                 object obj = ResourceManager.GetObject("MLGField", resourceCulture);
@@ -196,6 +296,16 @@ namespace Minesweeper.Properties {
         internal static System.Drawing.Bitmap MLGFlag {
             get {
                 object obj = ResourceManager.GetObject("MLGFlag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MLGLostFace {
+            get {
+                object obj = ResourceManager.GetObject("MLGLostFace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +333,26 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MLGWonFace {
+            get {
+                object obj = ResourceManager.GetObject("MLGWonFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShrekDefaultFace {
+            get {
+                object obj = ResourceManager.GetObject("ShrekDefaultFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ShrekField {
             get {
                 object obj = ResourceManager.GetObject("ShrekField", resourceCulture);
@@ -243,6 +373,16 @@ namespace Minesweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ShrekLostFace {
+            get {
+                object obj = ResourceManager.GetObject("ShrekLostFace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ShrekMine {
             get {
                 object obj = ResourceManager.GetObject("ShrekMine", resourceCulture);
@@ -256,6 +396,16 @@ namespace Minesweeper.Properties {
         internal static System.Drawing.Bitmap ShrekTile {
             get {
                 object obj = ResourceManager.GetObject("ShrekTile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShrekWonFace {
+            get {
+                object obj = ResourceManager.GetObject("ShrekWonFace", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

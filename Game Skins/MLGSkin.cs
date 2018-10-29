@@ -1,18 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Minesweeper.Properties;
 
 namespace Minesweeper
 {
-    public class MLGSkin : ISkin
+    [Serializable]
+    public class MLGSkin : Skin
     {
-        public Bitmap Field { get; } = Properties.Resources.MLGField;
-        public Bitmap Mine { get; } = Properties.Resources.MLGMine;
-        public Bitmap Tile { get; } = Properties.Resources.MLGTile;
-        public Bitmap Flag { get; } = Properties.Resources.MLGTile.OverlayBitmaps(Properties.Resources.MLGFlag);
-        public Brush TextBrush { get; } = Brushes.LimeGreen;
+        public override string SkinName { get; } = "MLG";
+        public override Bitmap Field { get; } = Resources.MLGField;
+        public override Bitmap Mine { get; } = Resources.MLGMine;
+        public override Bitmap Tile { get; } = Resources.MLGTile;
+        public override Bitmap Flag { get; } = Resources.MLGTile.OverlayBitmaps(Resources.MLGFlag);
+        public override Bitmap DefaultFace { get; } = Resources.MLGDefaultFace;
+        public override Bitmap LostFace { get; } = Resources.MLGLostFace;
+        public override Bitmap WonFace { get; } = Resources.MLGWonFace;
+        public override string WinMessage { get; } = "oh baby a triple";
+        public override string LostMessage { get; } = "u got rekt n00b";
+        public override Color TextBrushColor { get; } = Color.LimeGreen;
     }
 }

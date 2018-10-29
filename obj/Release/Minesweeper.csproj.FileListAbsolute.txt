@@ -1,0 +1,12 @@
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin\Release\Minesweeper.exe.config
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin\Release\Minesweeper.exe
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\bin\Release\Minesweeper.pdb
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.CustomSettingsForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.MainForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.NewPlayerForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.Properties.Resources.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.SelectPlayerForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.csproj.GenerateResource.cache
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.csproj.CoreCompileInputs.cache
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.exe
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.pdb

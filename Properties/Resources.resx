@@ -178,4 +178,49 @@
   <data name="ShrekTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skins\Shrek Skin\ShrekTile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DefaultDefaultFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Default Skin\DefaultDefaultFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultLostFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Default Skin\DefaultLostFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultWonFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Default Skin\DefaultWonFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutDefaultFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutDefaultFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutLostFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutLostFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FalloutWonFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Fallout Skin\FalloutWonFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftDefaultFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftDefaultFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftLostFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftLostFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MinecraftWonFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Minecraft Skin\MinecraftWonFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGDefaultFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGDefaultFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGLostFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGLostFace.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MLGWonFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\MLG Skin\MLGWonFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekDefaultFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekDefaultFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekLostFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekLostFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShrekWonFace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Skins\Shrek Skin\ShrekWonFace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

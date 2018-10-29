@@ -42,15 +42,14 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.defaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shrekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mLGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.minecraftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.futureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gifTimer = new System.Windows.Forms.Timer(this.components);
-            this.falloutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flagsLeftLabel = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.timeTimer = new System.Windows.Forms.Timer(this.components);
+            this.facePictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,65 +146,54 @@
             // 
             // skinToolStripMenuItem
             // 
-            this.skinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.defaultToolStripMenuItem,
-            this.shrekToolStripMenuItem,
-            this.mLGToolStripMenuItem,
-            this.minecraftToolStripMenuItem,
-            this.futureToolStripMenuItem,
-            this.falloutToolStripMenuItem});
             this.skinToolStripMenuItem.Name = "skinToolStripMenuItem";
             this.skinToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.skinToolStripMenuItem.Text = "Skin";
-            // 
-            // defaultToolStripMenuItem
-            // 
-            this.defaultToolStripMenuItem.Name = "defaultToolStripMenuItem";
-            this.defaultToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.defaultToolStripMenuItem.Text = "Default";
-            this.defaultToolStripMenuItem.Click += new System.EventHandler(this.defaultToolStripMenuItem_Click);
-            // 
-            // shrekToolStripMenuItem
-            // 
-            this.shrekToolStripMenuItem.Name = "shrekToolStripMenuItem";
-            this.shrekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shrekToolStripMenuItem.Text = "Shrek";
-            this.shrekToolStripMenuItem.Click += new System.EventHandler(this.shrekToolStripMenuItem_Click);
-            // 
-            // mLGToolStripMenuItem
-            // 
-            this.mLGToolStripMenuItem.Name = "mLGToolStripMenuItem";
-            this.mLGToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mLGToolStripMenuItem.Text = "MLG";
-            this.mLGToolStripMenuItem.Click += new System.EventHandler(this.mLGToolStripMenuItem_Click);
-            // 
-            // minecraftToolStripMenuItem
-            // 
-            this.minecraftToolStripMenuItem.Name = "minecraftToolStripMenuItem";
-            this.minecraftToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.minecraftToolStripMenuItem.Text = "Minecraft";
-            this.minecraftToolStripMenuItem.Click += new System.EventHandler(this.minecraftToolStripMenuItem_Click);
-            // 
-            // futureToolStripMenuItem
-            // 
-            this.futureToolStripMenuItem.Name = "futureToolStripMenuItem";
-            this.futureToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.futureToolStripMenuItem.Text = "Future";
             // 
             // gifTimer
             // 
             this.gifTimer.Tick += new System.EventHandler(this.gifTimer_Tick);
             // 
-            // falloutToolStripMenuItem
+            // flagsLeftLabel
             // 
-            this.falloutToolStripMenuItem.Name = "falloutToolStripMenuItem";
-            this.falloutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.falloutToolStripMenuItem.Text = "Fallout";
-            this.falloutToolStripMenuItem.Click += new System.EventHandler(this.falloutToolStripMenuItem_Click);
+            this.flagsLeftLabel.AutoSize = true;
+            this.flagsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.flagsLeftLabel.Location = new System.Drawing.Point(0, 24);
+            this.flagsLeftLabel.Name = "flagsLeftLabel";
+            this.flagsLeftLabel.Size = new System.Drawing.Size(64, 25);
+            this.flagsLeftLabel.TabIndex = 2;
+            this.flagsLeftLabel.Text = "label1";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timeLabel.Location = new System.Drawing.Point(249, 24);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(64, 25);
+            this.timeLabel.TabIndex = 3;
+            this.timeLabel.Text = "label2";
+            // 
+            // timeTimer
+            // 
+            this.timeTimer.Tick += new System.EventHandler(this.timeTimer_Tick);
+            // 
+            // facePictureBox
+            // 
+            this.facePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.facePictureBox.Location = new System.Drawing.Point(117, 24);
+            this.facePictureBox.Name = "facePictureBox";
+            this.facePictureBox.Size = new System.Drawing.Size(30, 30);
+            this.facePictureBox.TabIndex = 4;
+            this.facePictureBox.TabStop = false;
+            this.facePictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.facePictureBox_MouseClick);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
             this.pictureBox1.TabIndex = 1;
@@ -217,14 +205,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.facePictureBox);
+            this.Controls.Add(this.timeLabel);
+            this.Controls.Add(this.flagsLeftLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Minesweeper#";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,13 +240,11 @@
         private System.Windows.Forms.ToolStripMenuItem bestTimesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem skinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem defaultToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shrekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mLGToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem minecraftToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem futureToolStripMenuItem;
         private System.Windows.Forms.Timer gifTimer;
-        private System.Windows.Forms.ToolStripMenuItem falloutToolStripMenuItem;
+        private System.Windows.Forms.Label flagsLeftLabel;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.PictureBox facePictureBox;
+        private System.Windows.Forms.Timer timeTimer;
     }
 }
 

@@ -1,21 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Minesweeper.Properties;
 
 namespace Minesweeper
 {
-    public class MinecraftSkin : ISkin
+    [Serializable]
+    public class MinecraftSkin : Skin
     {
-        public Bitmap Field { get; } = Properties.Resources.MinecraftField;
-        public Bitmap Mine { get; } = Properties.Resources.MinecraftMine;
-        public Bitmap Tile { get; } = Properties.Resources.MinecraftTile;
+        public override string SkinName { get; } = "Minecraft";
+        public override Bitmap Field { get; } = Resources.MinecraftField;
+        public override Bitmap Mine { get; } = Resources.MinecraftMine;
+        public override Bitmap Tile { get; } = Resources.MinecraftTile;
 
-        public Bitmap Flag { get; } =
-            Properties.Resources.MinecraftTile.OverlayBitmaps(Properties.Resources.MinecraftFlag);
+        public override Bitmap Flag { get; } =
+            Resources.MinecraftTile.OverlayBitmaps(Resources.MinecraftFlag);
 
-        public Brush TextBrush { get; } = Brushes.LightGreen;
+        public override Bitmap DefaultFace { get; } = Resources.MinecraftDefaultFace;
+        public override Bitmap LostFace { get; } = Resources.MinecraftLostFace;
+        public override Bitmap WonFace { get; } = Resources.MinecraftWonFace;
+        public override string WinMessage { get; } = "[Mine Hunter] achievement unlocked";
+        public override string LostMessage { get; } = "Player was blown up by Creeper";
+
+        public override Color TextBrushColor { get; } = Color.Red;
     }
 }
