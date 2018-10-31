@@ -10,3 +10,4 @@ C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.csproj.CoreCompileInputs.cache
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.exe
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.pdb
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Release\Minesweeper.csprojAssemblyReference.cache

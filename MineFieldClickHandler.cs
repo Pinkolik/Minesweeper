@@ -1,13 +1,30 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Minesweeper
 {
     public static class MineFieldClickHandler
     {
-        public static void HandleFieldClick(this PictureBox pictureBox, MouseEventArgs args, MineField field)
+        public static void HandleFieldClick(this PictureBox pictureBox, MouseEventArgs args, MineField field, Skills skill)
         {
             var column = args.X / (pictureBox.Width / field.Columns);
             var row = args.Y / (pictureBox.Height / field.Rows);
+            switch (skill)
+            {
+                case Skills.None:
+                    HandleUsualClick(args, field, column, row);
+                    break;
+                case Skills.SolveSingleCell:
+                    field.SolveSingleCell(column, row);
+                    break;
+                case Skills.SolveNeighbors:
+                    field.SolveNeighbors(column, row);
+                    break;
+            }
+        }
+
+        private static void HandleUsualClick(MouseEventArgs args, MineField field, int column, int row)
+        {
             switch (args.Button)
             {
                 case MouseButtons.Left:

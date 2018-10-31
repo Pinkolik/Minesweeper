@@ -4,23 +4,23 @@ using Minesweeper.Properties;
 
 namespace Minesweeper
 {
-    [Serializable]
-    public class MinecraftSkin : Skin
+    [SkinInfo("Minecraft", 50000)]
+    public class MinecraftSkin : ISkin
     {
-        public override string SkinName { get; } = "Minecraft";
-        public override Bitmap Field { get; } = Resources.MinecraftField;
-        public override Bitmap Mine { get; } = Resources.MinecraftMine;
-        public override Bitmap Tile { get; } = Resources.MinecraftTile;
+        public string SkinName { get; } = "Minecraft";
+        public Bitmap Field { get; } = Resources.MinecraftField;
+        public Bitmap Mine { get; } = Resources.MinecraftMine;
+        public Bitmap Tile { get; } = Resources.MinecraftTile;
 
-        public override Bitmap Flag { get; } =
+        public Bitmap Flag { get; } =
             Resources.MinecraftTile.OverlayBitmaps(Resources.MinecraftFlag);
 
-        public override Bitmap DefaultFace { get; } = Resources.MinecraftDefaultFace;
-        public override Bitmap LostFace { get; } = Resources.MinecraftLostFace;
-        public override Bitmap WonFace { get; } = Resources.MinecraftWonFace;
-        public override string WinMessage { get; } = "[Mine Hunter] achievement unlocked";
-        public override string LostMessage { get; } = "Player was blown up by Creeper";
+        public Bitmap DefaultFace { get; } = Resources.MinecraftDefaultFace;
+        public Bitmap LostFace { get; } = Resources.MinecraftLostFace;
+        public Bitmap WonFace { get; } = Resources.MinecraftWonFace;
+        public string WinMessage { get; } = "[Mine Hunter] achievement unlocked";
+        public string LostMessage { get; } = "Player was blown up by Creeper";
 
-        public override Color TextBrushColor { get; } = Color.Red;
+        public Color TextBrushColor { get; } = Color.Red;
     }
 }

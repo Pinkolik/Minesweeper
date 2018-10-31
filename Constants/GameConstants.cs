@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Minesweeper
 {
@@ -15,13 +14,13 @@ namespace Minesweeper
         public static FieldSettings IntermediateSettings { get; } = new FieldSettings(16, 16, 40);
         public static FieldSettings ExpertSettings { get; } = new FieldSettings(30, 16, 99);
 
-        public static Dictionary<Skin, int> Skins { get; } = new Dictionary<Skin, int>
+        public static ISkin[] Skins { get; } =
         {
-            {new DefaultSkin(), 0},
-            {new ShrekSkin(), 10000},
-            {new MinecraftSkin(), 50000},
-            {new FalloutSkin(), 100000},
-            {new MLGSkin(), 999999}
+            new DefaultSkin(),
+            new ShrekSkin(),
+            new MinecraftSkin(),
+            new FalloutSkin(),
+            new MLGSkin()
         };
     }
 }

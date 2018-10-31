@@ -55,6 +55,8 @@
     <Compile Include="Game Engine\GameState.cs" />
     <Compile Include="Game Engine\Player.cs" />
     <Compile Include="Game Engine\PlayerLoader.cs" />
+    <Compile Include="Game Skills\SkillInfo.cs" />
+    <Compile Include="Game Skills\Skills.cs" />
     <Compile Include="Game Skins\FalloutSkin.cs" />
     <Compile Include="Game Skins\MinecraftSkin.cs" />
     <Compile Include="Game Skins\MLGSkin.cs" />
@@ -62,7 +64,8 @@
     <Compile Include="Game Skins\BitmapExtension.cs" />
     <Compile Include="Game Skins\ShrekSkin.cs" />
     <Compile Include="Game Skins\DefaultSkin.cs" />
-    <Compile Include="Game Skins\Skin.cs" />
+    <Compile Include="Game Skins\ISkin.cs" />
+    <Compile Include="Game Skins\SkinInfo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -48,6 +48,7 @@
             this.timeTimer = new System.Windows.Forms.Timer(this.components);
             this.facePictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.skillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,7 +58,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
-            this.skinToolStripMenuItem});
+            this.skinToolStripMenuItem,
+            this.skillsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -200,6 +202,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
+            // skillsToolStripMenuItem
+            // 
+            this.skillsToolStripMenuItem.Name = "skillsToolStripMenuItem";
+            this.skillsToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.skillsToolStripMenuItem.Text = "Skills";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +253,7 @@
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.PictureBox facePictureBox;
         private System.Windows.Forms.Timer timeTimer;
+        private System.Windows.Forms.ToolStripMenuItem skillsToolStripMenuItem;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 
 namespace Minesweeper
@@ -31,11 +32,26 @@ namespace Minesweeper
 
         public bool BuySkin(string name)
         {
-            var skinToBuy = GameConstants.Skins.First(pair => pair.Key.SkinName == name);
-            if (Money < skinToBuy.Value) return false;
-            _ownedSkins.Add(skinToBuy.Key.SkinName);
+            var cost = GameConstants.Skins
+                .Select(s => (SkinInfo) s.GetType().GetCustomAttribute(typeof(SkinInfo), false))
+                .Where(attr => attr.Name == name)
+                .Select(attr => attr.Cost)
+                .FirstOrDefault();
+            if (Money < cost) return false;
+            _ownedSkins.Add(name);
             OwnedSkins = _ownedSkins.ToArray();
-            Money -= skinToBuy.Value;
+            Money -= cost;
+            return true;
+        }
+
+        public bool BuySkill(Skills skill)
+        {
+            var cost = ((SkillInfo) typeof(Skills)
+                .GetField(Enum.GetName(typeof(Skills), skill))
+                .GetCustomAttribute(typeof(SkillInfo), false))
+                .Cost;
+            if (Money < cost) return false;
+            Money -= cost;
             return true;
         }
 

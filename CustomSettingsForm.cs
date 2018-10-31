@@ -22,7 +22,7 @@ namespace Minesweeper
                 var columns = int.Parse(widthTextBox.Text);
                 var rows = int.Parse(heightTextBox.Text);
                 var mines = int.Parse(minesTextBox.Text);
-                settings = mines >= columns * rows || columns <= 0 || rows <= 0 || mines <= 0
+                settings = mines >= columns * rows || columns <= 0 || rows <= 0 || mines <= 0 || rows > 16 || columns > 32
                     ? GameConstants.BeginnerSettings
                     : new FieldSettings(columns, rows, mines);
             }

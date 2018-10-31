@@ -5,7 +5,7 @@ namespace Minesweeper
 {
     public static class MineFieldDrawer
     {
-        public static void DrawField(this PictureBox pictureBox, MineField mineField, Skin skin)
+        public static void DrawField(this PictureBox pictureBox, MineField mineField, ISkin skin)
         {
             var bitmap = skin.Field.ResizeBitmap(pictureBox.Width, pictureBox.Height);
             var tempGraphics = Graphics.FromImage(bitmap);
@@ -24,7 +24,7 @@ namespace Minesweeper
         private static void DrawMineCell(int row, int column, Graphics graphics,
             Font font,
             Brush fontBrush,
-            Skin skin,
+            ISkin skin,
             MineField mineField)
         {
             Bitmap myImage;

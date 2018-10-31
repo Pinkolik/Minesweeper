@@ -44,7 +44,7 @@ namespace Minesweeper
             _numberOfMines = numberOfMines;
             _gameWatch = new Stopwatch();
             _cellsToOpen = Columns * Rows - _numberOfMines;
-            _fieldSettings = new FieldSettings(columns, rows, numberOfMines);
+            FieldSettings = new FieldSettings(columns, rows, numberOfMines);
         }
 
         public MineField(FieldSettings settings) :
@@ -60,7 +60,6 @@ namespace Minesweeper
         private readonly Stopwatch _gameWatch;
         private readonly MineCell[,] _mineCells;
         private readonly int _numberOfMines;
-        private readonly FieldSettings _fieldSettings;
         private int _flagsOnField;
 
         #endregion
@@ -71,6 +70,7 @@ namespace Minesweeper
         public int Rows { get; }
         public double TimeElapsed => _gameWatch.ElapsedMilliseconds / 1000.0;
         public int MoneyWon { get; private set; }
+        public FieldSettings FieldSettings { get; }
         public GameState GameState { get; private set; }
         public event EventHandler OnGameOver;
         public event EventHandler OnGameWon;
@@ -120,13 +120,13 @@ namespace Minesweeper
         {
             if (GameState != GameState.InProgress || !CheckGameWon()) return;
             ShowMines();
-            if (_fieldSettings.Equals(GameConstants.BeginnerSettings) ||
-                _fieldSettings.Equals(GameConstants.IntermediateSettings) ||
-                _fieldSettings.Equals(GameConstants.ExpertSettings))
-                MoneyWon = (int) Math.Round(Rows * Columns +
-                                            (double) _numberOfMines / (Rows * Columns) * 10000 / TimeElapsed) *
-                           (_numberOfMines / 10);
-            OnGameWon.Invoke(this, EventArgs.Empty);
+            if (FieldSettings.Equals(GameConstants.BeginnerSettings) ||
+                FieldSettings.Equals(GameConstants.IntermediateSettings) ||
+                FieldSettings.Equals(GameConstants.ExpertSettings))
+                MoneyWon = (int) Math.Round(
+                    (_mineCells.Length + _mineCells.Length * 10 * ((double) _numberOfMines / 10) / TimeElapsed) *
+                    ((double) _numberOfMines / 10));
+            OnGameWon?.Invoke(this, EventArgs.Empty);
         }
 
         private bool CheckGameWon()
@@ -142,9 +142,34 @@ namespace Minesweeper
         private void GameOver()
         {
             _gameWatch.Stop();
-            GameState = GameState.Won;
+            GameState = GameState.Lost;
             ShowMines();
-            OnGameOver.Invoke(this, EventArgs.Empty);
+            OnGameOver?.Invoke(this, EventArgs.Empty);
+        }
+
+        #endregion
+
+        #region Game skills
+
+        public void SolveSingleCell(int column, int row)
+        {
+            if (_mineCells[column, row].HasMine)
+            {
+                if (!_mineCells[column, row].HasFlag)
+                    PutFlag(column, row);
+            }
+            else
+            {
+                if (_mineCells[column, row].HasFlag)
+                    PutFlag(column, row);
+                OpenCell(column, row);
+            }
+        }
+
+        public void SolveNeighbors(int column, int row)
+        {
+            SolveSingleCell(column, row);
+            MakeActionWithNeighbors(column, row, SolveSingleCell);
         }
 
         #endregion
