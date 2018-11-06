@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Minesweeper
+namespace Minesweeper.Serializer
 {
     public static class Serializer
     {

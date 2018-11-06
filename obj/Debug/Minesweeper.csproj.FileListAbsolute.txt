@@ -7,7 +7,9 @@ C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.csproj.CoreCompileInputs.cache
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.exe
 C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.pdb
-C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.CustomSettingsForm.resources
-C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.MainForm.resources
-C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.NewPlayerForm.resources
-C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.SelectPlayerForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Achievements.StatisticsForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Engine.CustomSettingsForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.UI.MainForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.PlayerNamespace.NewPlayerForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.PlayerNamespace.SelectPlayerForm.resources
+C:\Users\mrpin\Documents\Visual Studio 2017\Projects\Minesweeper\Minesweeper\obj\Debug\Minesweeper.Achievements.AchievementTableForm.resources

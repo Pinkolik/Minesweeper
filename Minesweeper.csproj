@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\minesweeper_AZF_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,60 +48,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomSettingsForm.cs">
+    <Compile Include="Achievements\AchievementChecker.cs" />
+    <Compile Include="Achievements\AchievementEvenArgs.cs" />
+    <Compile Include="Achievements\AchievementInfo.cs" />
+    <Compile Include="Achievements\AchievementProgress.cs" />
+    <Compile Include="Achievements\AchievementTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomSettingsForm.Designer.cs">
+    <Compile Include="Achievements\AchievementTableForm.Designer.cs">
+      <DependentUpon>AchievementTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Achievements\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Achievements\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\CustomSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\CustomSettingsForm.Designer.cs">
       <DependentUpon>CustomSettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game Engine\FieldSettings.cs" />
-    <Compile Include="Game Engine\GameState.cs" />
-    <Compile Include="Game Engine\Player.cs" />
-    <Compile Include="Game Engine\PlayerLoader.cs" />
-    <Compile Include="Game Skills\SkillInfo.cs" />
-    <Compile Include="Game Skills\Skills.cs" />
-    <Compile Include="Game Skins\FalloutSkin.cs" />
-    <Compile Include="Game Skins\MinecraftSkin.cs" />
-    <Compile Include="Game Skins\MLGSkin.cs" />
-    <Compile Include="Game Engine\SettingsLoader.cs" />
-    <Compile Include="Game Skins\BitmapExtension.cs" />
-    <Compile Include="Game Skins\ShrekSkin.cs" />
-    <Compile Include="Game Skins\DefaultSkin.cs" />
-    <Compile Include="Game Skins\ISkin.cs" />
-    <Compile Include="Game Skins\SkinInfo.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Engine\FieldSettings.cs" />
+    <Compile Include="Engine\GameState.cs" />
+    <Compile Include="PlayerNamespace\Player.cs" />
+    <Compile Include="PlayerNamespace\PlayerLoader.cs" />
+    <Compile Include="SkillsNamespace\SkillInfo.cs" />
+    <Compile Include="SkillsNamespace\Skills.cs" />
+    <Compile Include="Skins\FalloutSkin.cs" />
+    <Compile Include="Skins\MinecraftSkin.cs" />
+    <Compile Include="Skins\MLGSkin.cs" />
+    <Compile Include="Engine\SettingsLoader.cs" />
+    <Compile Include="Skins\BitmapExtension.cs" />
+    <Compile Include="Skins\ShrekSkin.cs" />
+    <Compile Include="Skins\DefaultSkin.cs" />
+    <Compile Include="Skins\ISkin.cs" />
+    <Compile Include="Skins\SkinInfo.cs" />
+    <Compile Include="UI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="UI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants\GameConstants.cs" />
-    <Compile Include="Game Engine\MineCell.cs" />
-    <Compile Include="Game Engine\MineField.cs" />
-    <Compile Include="MineFieldClickHandler.cs" />
-    <Compile Include="MineFieldDrawer.cs" />
-    <Compile Include="NewPlayerForm.cs">
+    <Compile Include="Engine\MineCell.cs" />
+    <Compile Include="Engine\MineField.cs" />
+    <Compile Include="UI\MineFieldClickHandler.cs" />
+    <Compile Include="UI\MineFieldDrawer.cs" />
+    <Compile Include="PlayerNamespace\NewPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewPlayerForm.Designer.cs">
+    <Compile Include="PlayerNamespace\NewPlayerForm.Designer.cs">
       <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectPlayerForm.cs">
+    <Compile Include="PlayerNamespace\SelectPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectPlayerForm.Designer.cs">
+    <Compile Include="PlayerNamespace\SelectPlayerForm.Designer.cs">
       <DependentUpon>SelectPlayerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Serializer\Serializer.cs" />
-    <EmbeddedResource Include="CustomSettingsForm.resx">
+    <EmbeddedResource Include="Achievements\AchievementTableForm.resx">
+      <DependentUpon>AchievementTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Achievements\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\CustomSettingsForm.resx">
       <DependentUpon>CustomSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewPlayerForm.resx">
+    <EmbeddedResource Include="PlayerNamespace\NewPlayerForm.resx">
       <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,7 +136,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SelectPlayerForm.resx">
+    <EmbeddedResource Include="PlayerNamespace\SelectPlayerForm.resx">
       <DependentUpon>SelectPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -128,6 +153,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\minesweeper_AZF_icon.ico" />
     <Content Include="Resources\Skins\Fallout Skin\FalloutDefaultFace.png" />
     <Content Include="Resources\Skins\Shrek Skin\ShrekWonFace.png" />
     <Content Include="Resources\Skins\Default Skin\DefaultDefaultFace.png" />
