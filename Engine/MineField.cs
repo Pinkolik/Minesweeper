@@ -72,6 +72,7 @@ namespace Minesweeper.Engine
         public double TimeElapsed => _gameWatch.ElapsedMilliseconds / 1000.0;
         public int MoneyWon { get; private set; }
         public int SkillsUsed { get; private set; }
+        public int FlagsLeft => _numberOfMines - _flagsOnField;
         public FieldSettings FieldSettings { get; }
         public GameState GameState { get; private set; }
         public event EventHandler OnGameOver;
@@ -279,11 +280,6 @@ namespace Minesweeper.Engine
         public int NeighborMinesCount(int column, int row)
         {
             return _mineCells[column, row].NeighborMines;
-        }
-
-        public int FlagsLeft()
-        {
-            return _numberOfMines - _flagsOnField;
         }
 
         #endregion

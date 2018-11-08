@@ -6,7 +6,8 @@ namespace Minesweeper.UI
 {
     public static class MineFieldClickHandler
     {
-        public static void HandleFieldClick(this PictureBox pictureBox, MouseEventArgs args, MineField field, Skills skill)
+        public static void HandleFieldClick(this PictureBox pictureBox, MouseEventArgs args, MineField field,
+            Skills skill)
         {
             if (field.GameState == GameState.Paused) return;
             var column = args.X / (pictureBox.Width / field.Columns);

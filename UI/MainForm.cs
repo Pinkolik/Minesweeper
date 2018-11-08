@@ -14,11 +14,11 @@ namespace Minesweeper.UI
 {
     public partial class MainForm : Form
     {
-        private Player _player;
         private Skills _chosenSkill = Skills.None;
         private FrameDimension _dimension;
         private int _frameIndex;
         private MineField _mineField;
+        private Player _player;
         private FieldSettings _settings;
         private ISkin _skin;
 
@@ -30,9 +30,6 @@ namespace Minesweeper.UI
             _skin = new DefaultSkin();
             SetFace(_skin.DefaultFace);
             InitializePlayer();
-            InitializeSkinToolStrip();
-            InitializeSkillsToolStrip();
-            StartNewGame();
             timeTimer.Enabled = true;
         }
 
@@ -41,7 +38,6 @@ namespace Minesweeper.UI
             var width = _settings.Columns * GameConstants.CellWidth;
             var height = _settings.Rows * GameConstants.CellHeight;
             ClientSize = new Size(width, height + menuStrip1.Height + facePictureBox.Height);
-            flagsLeftLabel.Text = string.Format("Flags left: {0}", _mineField.FlagsLeft());
             facePictureBox.Top = menuStrip1.Height;
             facePictureBox.Left = (width - facePictureBox.Width) / 2;
             pictureBox1.Top = menuStrip1.Height + facePictureBox.Height;
@@ -64,6 +60,7 @@ namespace Minesweeper.UI
             _mineField.OnGameOver += OnGameOver;
             _mineField.OnGameWon += OnGameWon;
             SetFace(_skin.DefaultFace);
+            flagsLeftLabel.Text = _mineField.FlagsLeft.ToString();
             ResizeForm();
             pictureBox1.DrawField(_mineField, _skin);
         }
@@ -75,7 +72,7 @@ namespace Minesweeper.UI
 
         private void OnAchievementUnlocked(object sender, EventArgs e)
         {
-            var achievementEventArgs = (AchievementEvenArgs)e;
+            var achievementEventArgs = (AchievementEvenArgs) e;
             MessageBox.Show($"Achievement {achievementEventArgs.AchievementInfo.Name} unlocked!");
         }
 
@@ -107,13 +104,13 @@ namespace Minesweeper.UI
             pictureBox1.HandleFieldClick(e, _mineField, _chosenSkill);
             _chosenSkill = Skills.None;
             pictureBox1.DrawField(_mineField, _skin);
-            flagsLeftLabel.Text = string.Format("Flags left: {0}", _mineField.FlagsLeft());
+            flagsLeftLabel.Text = _mineField.FlagsLeft.ToString();
             _mineField.CheckGameState();
         }
 
         private void timeTimer_Tick(object sender, EventArgs e)
         {
-            timeLabel.Text = "Time: " + Math.Floor(_mineField.TimeElapsed);
+            timeLabel.Text = Math.Floor(_mineField.TimeElapsed).ToString();
             timeLabel.Left = ClientSize.Width - timeLabel.Width;
         }
 
@@ -134,10 +131,16 @@ namespace Minesweeper.UI
             pictureBox1.DrawField(_mineField, _skin);
         }
 
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            _player.KeyPress(e.KeyData.ToString());
+        }
+
         #region Skills tool strip
 
         private void InitializeSkillsToolStrip()
         {
+            skillsToolStripMenuItem.DropDownItems.Clear();
             foreach (var fieldInfo in typeof(Skills).GetFields())
             {
                 var skillAttribute = (SkillInfo) fieldInfo.GetCustomAttribute(typeof(SkillInfo), false);
@@ -152,14 +155,16 @@ namespace Minesweeper.UI
 
         private void SkillClickHandler(object sender, EventArgs eventArgs, Skills skill)
         {
+            if (_mineField.GameState != GameState.InProgress)
+            {
+                MessageBox.Show("Game is not in progress.");
+                return;
+            }
+
             if (_player.BuySkill(skill))
-            {
                 _chosenSkill = skill;
-            }
             else
-            {
                 MessageBox.Show("Not enough money to buy this!");
-            }
         }
 
         #endregion
@@ -213,13 +218,9 @@ namespace Minesweeper.UI
         private void NotPurchasedSkinClickHandler(object sender, EventArgs eventArgs, int skinId)
         {
             if (_player.BuySkin(skinId))
-            {
                 InitializeSkinToolStrip();
-            }
             else
-            {
                 MessageBox.Show("Not enough money to buy this!");
-            }
         }
 
         #endregion
@@ -285,6 +286,9 @@ namespace Minesweeper.UI
             _player.OnMoneyChanged += OnMoneyChanged;
             _player.OnAchievementUnlocked += OnAchievementUnlocked;
             OnMoneyChanged(this, EventArgs.Empty);
+            InitializeSkinToolStrip();
+            InitializeSkillsToolStrip();
+            StartNewGame();
         }
 
         private void changePlayerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -306,10 +310,5 @@ namespace Minesweeper.UI
         }
 
         #endregion
-
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            _player.KeyPress(e.KeyData.ToString());
-        }
     }
 }

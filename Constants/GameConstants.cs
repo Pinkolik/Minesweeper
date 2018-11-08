@@ -15,6 +15,7 @@ namespace Minesweeper.Constants
         public static FieldSettings BeginnerSettings { get; } = new FieldSettings(10, 10, 10);
         public static FieldSettings IntermediateSettings { get; } = new FieldSettings(16, 16, 40);
         public static FieldSettings ExpertSettings { get; } = new FieldSettings(30, 16, 99);
+
         public static ISkin[] Skins { get; } =
         {
             new DefaultSkin(),

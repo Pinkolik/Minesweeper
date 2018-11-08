@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Minesweeper.PlayerNamespace;
-using System.Reflection;
 
 namespace Minesweeper.Achievements
 {
@@ -27,8 +20,7 @@ namespace Minesweeper.Achievements
         {
             foreach (var achievement in player.Achievements)
             {
-                var achievementInfo = typeof(AchievementChecker).GetMethods()
-                    .Select(methodInfo => (AchievementInfo) methodInfo.GetCustomAttribute(typeof(AchievementInfo)))
+                var achievementInfo = AchievementChecker.AchievementDictionary.Values
                     .First(info => info.Id == achievement.Key);
 
                 var flowLayoutPanel = new FlowLayoutPanel();
@@ -42,7 +34,9 @@ namespace Minesweeper.Achievements
                 var nameFont = new Font(FontFamily.GenericSerif, 15, FontStyle.Bold);
                 var nameLabel = new Label();
                 nameLabel.AutoSize = true;
-                nameLabel.Text = achievementInfo.Secret && !achievement.Value.Completed ? "Secret achievement" : achievementInfo.Name;
+                nameLabel.Text = achievementInfo.Secret && !achievement.Value.Completed
+                    ? "Secret achievement"
+                    : achievementInfo.Name;
                 nameLabel.Font = nameFont;
                 nameFont.Dispose();
 

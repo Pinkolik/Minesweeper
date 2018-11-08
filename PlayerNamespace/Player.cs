@@ -18,10 +18,10 @@ namespace Minesweeper.PlayerNamespace
             _achievements = new Dictionary<int, AchievementProgress>();
 
         private readonly Dictionary<FieldSettings, double> _bestTimes = new Dictionary<FieldSettings, double>();
-        private readonly List<int> _ownedSkins = new List<int> {0};
-        private int _money;
-        private string _input = "";
         private readonly string _cheat = "XYZZY";
+        private readonly List<int> _ownedSkins = new List<int> {0};
+        private string _input = "";
+        private int _money;
 
         public Player(string name)
         {
@@ -76,6 +76,7 @@ namespace Minesweeper.PlayerNamespace
             if (Money < cost) return false;
             _ownedSkins.Add(skinId);
             Money -= cost;
+            CheckAchievements();
             return true;
         }
 
@@ -87,6 +88,8 @@ namespace Minesweeper.PlayerNamespace
                 .Cost;
             if (Money < cost) return false;
             Money -= cost;
+            SkillsUsed++;
+            CheckAchievements();
             return true;
         }
 
@@ -100,7 +103,6 @@ namespace Minesweeper.PlayerNamespace
             {
                 Money += field.MoneyWon;
                 MoneyEarnedTotal += field.MoneyWon;
-                SkillsUsed += field.SkillsUsed;
             }
 
             switch (field.GameState)
@@ -135,15 +137,14 @@ namespace Minesweeper.PlayerNamespace
 
         private void CheckAchievements()
         {
-            foreach (var methodInfo in typeof(AchievementChecker).GetMethods())
+            foreach (var pair in AchievementChecker.AchievementDictionary)
             {
-                var achievementInfo = (AchievementInfo) methodInfo.GetCustomAttribute(typeof(AchievementInfo));
-                if (achievementInfo == null) continue;
+                var achievementInfo = pair.Value;
                 var id = achievementInfo.Id;
                 if (!_achievements.ContainsKey(id))
                     _achievements.Add(id, null);
                 var previousState = _achievements[id] != null && _achievements[id].Completed;
-                _achievements[id] = (AchievementProgress) methodInfo.Invoke(null, new object[] {this});
+                _achievements[id] = (AchievementProgress) pair.Key.Invoke(null, new object[] {this});
                 if (!previousState && _achievements[id].Completed)
                     OnAchievementUnlocked?.Invoke(this, new AchievementEvenArgs(achievementInfo));
             }
@@ -159,6 +160,7 @@ namespace Minesweeper.PlayerNamespace
                     _input = "";
                     return;
                 }
+
             if (_cheat.Length != _input.Length) return;
             UsedCheatCode = true;
             CheckAchievements();
